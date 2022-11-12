@@ -1,4 +1,5 @@
 ﻿using Business.Abstract;
+using DataAccess.Abstract;
 using Entities.Concrete;
 using System;
 using System.Collections.Generic;
@@ -10,29 +11,35 @@ namespace Business.Concrete
 {
     public class ProjectManager : ProjectService
     {
+        IProjectDal _projectDal;
+
+        public ProjectManager(IProjectDal projectDal)
+        {
+            _projectDal = projectDal;
+        }
         public void Add(Project project)
         {
-            throw new NotImplementedException();
+            _projectDal.Add(project);
         }
 
         public void Delete(Project project)
         {
-            throw new NotImplementedException();
+            _projectDal.Delete(project);
         }
 
         public List<Project> GetAll()
         {
-            throw new NotImplementedException();
+            return _projectDal.GetAll();
         }
 
         public Project GetById(int id)
         {
-            throw new NotImplementedException();
+            return _projectDal.GetById(id);
         }
 
         public void Update(Project project)
         {
-            throw new NotImplementedException();
+            _projectDal.Update(project);
         }
     }
 }

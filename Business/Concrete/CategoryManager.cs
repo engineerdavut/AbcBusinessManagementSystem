@@ -1,4 +1,5 @@
 ﻿using Business.Abstract;
+using DataAccess.Abstract;
 using Entities.Concrete;
 using System;
 using System.Collections.Generic;
@@ -10,29 +11,35 @@ namespace Business.Concrete
 {
     public class CategoryManager : CategoryService
     {
+        ICategoryDal _categoryDal;
+
+        public CategoryManager(ICategoryDal categoryDal)
+        {
+            _categoryDal = categoryDal;
+        }
         public void Add(Category category)
         {
-            throw new NotImplementedException();
+            _categoryDal.Add(category);
         }
 
         public void Delete(Category category)
         {
-            throw new NotImplementedException();
+            _categoryDal.Delete(category);
         }
 
         public List<Category> GetAll()
         {
-            throw new NotImplementedException();
+            return _categoryDal.GetAll();
         }
 
         public Category GetById(int id)
         {
-            throw new NotImplementedException();
+            return _categoryDal.GetById(id);
         }
 
         public void Update(Category category)
         {
-            throw new NotImplementedException();
+            _categoryDal.Update(category);
         }
     }
 }

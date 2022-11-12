@@ -1,4 +1,5 @@
 ﻿using Business.Abstract;
+using DataAccess.Abstract;
 using Entities.Concrete;
 using System;
 using System.Collections.Generic;
@@ -10,29 +11,35 @@ namespace Business.Concrete
 {
     public class TeamManager : TeamService
     {
+        ITeamDal _teamDal;
+
+        public TeamManager(ITeamDal teamDal)
+        {
+            _teamDal = teamDal;
+        }
         public void Add(Team team)
         {
-            throw new NotImplementedException();
+            _teamDal.Add(team);
         }
 
         public void Delete(Team team)
         {
-            throw new NotImplementedException();
+            _teamDal.Delete(team);
         }
 
         public List<Team> GetAll()
         {
-            throw new NotImplementedException();
+            return _teamDal.GetAll();
         }
 
         public Team GetById(int id)
         {
-            throw new NotImplementedException();
+            return _teamDal.GetById(id);
         }
 
-        public void Update(Team team)
+        public void Update(Team Team)
         {
-            throw new NotImplementedException();
+            _teamDal.Update(Team);
         }
     }
 }
