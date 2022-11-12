@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Entities.Concrete
 {
-    class UserOperationClaim
+    public class UserOperationClaim
     {
         [Key]
         public int Id { get; set; }

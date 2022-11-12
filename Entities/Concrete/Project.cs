@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Entities.Concrete
 {
-    class Project
+    public class Project
     {
         [Key]
         public int Id { get; set; }
@@ -19,7 +19,9 @@ namespace Entities.Concrete
         public double Process { get; set; }
 
         public string Icon { get; set; }
-
+        public int CategoryId { get; set; }
         public Category Category { get; set; }
+        public int TeamId { get; set; }
+        public Team Team { get; set; }
     }
 }

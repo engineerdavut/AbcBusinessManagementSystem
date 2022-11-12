@@ -7,12 +7,14 @@ using System.Threading.Tasks;
 
 namespace Entities.Concrete
 {
-    class Category
+    public class Category
     {
         //Category sinifi tablosu ,enumda olabilirdi.
         [Key]
-        public int Id { get; set; }
+        public int CategoryId { get; set; }
         [StringLength(50)]
         public string CategoryName { get; set; }
+
+        public List<Project> Projects { get; set; }
     }
 }

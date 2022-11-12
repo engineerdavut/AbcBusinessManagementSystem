@@ -7,13 +7,13 @@ using System.ComponentModel.DataAnnotations;
 
 namespace Entities.Concrete
 {
-    class Team
+    public class Team
     {
         [Key]
         public int Id { get; set; }
         [StringLength(50)]
         public string TeamName { get; set; }
 
-        public ICollection<Account> Account { get; set; }
+        public List<Project> Projects { get; set; }
     }
 }
